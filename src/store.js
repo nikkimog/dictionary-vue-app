@@ -24,7 +24,14 @@ const actions = {
 			const res = await axios.get(
 				`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=4b67ba34-831b-42d9-ae60-c9dbd158379b`
 			);
-			commit("SET_DEFINITION", res.data[0].shortdef);
+			console.log("res.data.[0", res.data[0].shortdef);
+			if (res.data[0].shortdef === undefined) {
+				commit("SET_DEFINITION", [
+					"Sorry, this is not a word in the Merriam Webster dictionary.",
+				]);
+			} else {
+				commit("SET_DEFINITION", res.data[0].shortdef);
+			}
 			commit("SET_PREV_SEARCHES", word);
 		} catch (err) {
 			console.log("error fetching from API");
