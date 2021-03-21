@@ -26,10 +26,6 @@ export default {
 			return this.$store.state.prevDefinitions;
 		},
 		prevSearches() {
-			console.log(
-				this.$store.state.prevSearches,
-				"this.store.state.prevsearches"
-			);
 			return this.$store.state.prevSearches;
 		},
 	},

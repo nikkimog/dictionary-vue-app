@@ -19,9 +19,6 @@
 					<h2 id="word" v-if="word">Word: {{ word }}</h2>
 
 					<p v-if="definition"><span>Definition:</span> {{ definition[0] }}</p>
-					<!-- <p v-if="word && !definition">
-						Sorry, this is not a word in the Merriam Webster dictionary.
-					</p> -->
 				</b-card-text>
 			</b-card>
 		</b-card-group>
